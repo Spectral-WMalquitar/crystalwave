@@ -6,13 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DatabaseUtilities;
-using ControlUtilities;
+using System.IO;
 using System.Data.OleDb;
 using System.Threading;
 using System.Collections;
 using FileSyncUtilities;
-using System.IO;
+using DatabaseUtilities;
+using ControlUtilities;
 
 namespace FileSynchronization
 {
@@ -82,7 +82,9 @@ namespace FileSynchronization
                 string logPath = @"C:\FileSyncLog\FileSyncLog.log";
                 if (!File.Exists(logPath))
                     Directory.CreateDirectory(@"C:\FileSyncLog");
-                
+
+
+
                 File.AppendAllText(@"C:\FileSyncLog\FileSyncLog.log", txtSyncStatus.Text);
                 filesToProcess.Clear();
                 MessageBox.Show("File Synchronization succesfuly carried out.", "Run File Sync", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,7 +120,8 @@ namespace FileSynchronization
                 itm.SubItems.Add(dr["PathName"].ToString());
                 itm.SubItems.Add(dr["DestinationName"].ToString());
                 itm.SubItems.Add((dr["Selected"].ToString().Equals("True") ? "Yes" : "No"));
-                lstTasks.Items.AddRange(new ListViewItem[] { itm });
+                //lstTasks.Items.AddRange(new ListViewItem[] { itm });
+                lstTasks.Items.Add(itm);
             }
             dr.Close();
         }
@@ -177,7 +180,6 @@ namespace FileSynchronization
                 PopulateListView();
                 grpAddTask.Enabled = false;
                 grpScheduledTask.Enabled = true;
-                
             }
         }
 

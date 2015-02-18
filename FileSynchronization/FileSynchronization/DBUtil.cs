@@ -50,7 +50,6 @@ namespace DatabaseUtilities
                 return null;
             }
         }
-
         public void ExecuteUpdate(string sql)
         {
             try
@@ -64,7 +63,6 @@ namespace DatabaseUtilities
                 MessageBox.Show(ex.Message + " : " + ex.Source);
             }
         }
-
         public void LoadDetailsToListBox(ListBox lst, string sql)
         {
             DBUtil.rd = ExecuteQuery(sql);
@@ -74,7 +72,6 @@ namespace DatabaseUtilities
             }
             DBUtil.rd.Close();
         }
-
         public string RunOpenDialog(string title)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -99,7 +96,7 @@ namespace DatabaseUtilities
             for (int i = 0; i < charCount; i++)
             {
                 if (isNumeric)
-                    retVal += rnd.Next(1, 10).ToString();
+                    retVal += rnd.Next(0, 10).ToString();
                 else
                     retVal += Convert.ToChar(rnd.Next(65, 90)).ToString();
             }

@@ -59,6 +59,7 @@ namespace FileSyncUtilities
 
         private string ConfigureNameFormat(string nameFormat)
         {
+            
             string fileYear = DateTime.Now.Year.ToString().Substring(2);
             string fileMonth = ConvertToZeroTrail(DateTime.Now.Month, DateTime.Now.Month.ToString());
             string fileDay = ConvertToZeroTrail(DateTime.Now.Day, DateTime.Now.Day.ToString());

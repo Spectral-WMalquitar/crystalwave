@@ -366,7 +366,7 @@
             this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRun.Location = new System.Drawing.Point(783, 324);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(107, 66);
+            this.btnRun.Size = new System.Drawing.Size(107, 88);
             this.btnRun.TabIndex = 3;
             this.btnRun.Text = "&Run Sync";
             this.btnRun.UseVisualStyleBackColor = true;
