@@ -15,6 +15,8 @@ namespace DatabaseUtilities
         private OleDbConnection conn;
         private string ConnStr;
 
+
+        //Revising the class DBUtil for faster compilation.
         public DBUtil()
         {
             try
@@ -34,7 +36,14 @@ namespace DatabaseUtilities
 
         public OleDbConnection GetConnection()
         {
-            return conn;
+        	if (this.conn != null)
+            	return conn;
+            else
+            {
+            	conn = new OleDbConnection(ConnStr);
+            	conn.Open();
+            	return conn;
+            }
         }
         public OleDbDataReader ExecuteQuery(string sql)
         {
